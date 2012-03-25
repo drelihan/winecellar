@@ -1,0 +1,44 @@
+<h1>Add a New Bottle</h1>
+<%= render 'form' %>
+
+<p style='margin-top: 30px'></p>
+<hr>
+<p style='margin-top: 30px'></p>
+
+<h1>Current Bottles</h1>
+
+Count: <%= @number_of_bottles %>
+<p>
+<% if @bottles.size == 0 %>
+<em>No bottles in collection :( </em>
+<% else %>
+<table>
+  <tr>
+    <th>Vintage</th>
+    <th>Label</th>
+    <th>Varietal</th>
+    <th>Vineyard</th>
+    <th>Quantity</th>
+    <th>Bottle size ml</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bottles.each do |bottle| %>
+  <tr>
+    <td><%= bottle.vintage %></td>
+    <td><%= bottle.label %></td>
+    <td><%= bottle.varietal %></td>
+    <td><%= bottle.vineyard %></td>
+    <td><%= bottle.quantity %></td>
+    <td><%= bottle.bottle_size_ml %></td>
+    <td><%= link_to 'Show', bottle %></td>
+    <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
+    <td><%= link_to 'Destroy', bottle, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />

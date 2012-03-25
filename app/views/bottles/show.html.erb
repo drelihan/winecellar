@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Vintage:</b>
+  <%= @bottle.vintage %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @bottle.label %>
+</p>
+
+<p>
+  <b>Varietal:</b>
+  <%= @bottle.varietal %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @bottle.quantity %>
+</p>
+
+<p>
+  <b>Bottle size ml:</b>
+  <%= @bottle.bottle_size_ml %>
+</p>
+
+
+<%= link_to 'Edit', edit_bottle_path(@bottle) %> |
+<%= link_to 'Back', bottles_path %>

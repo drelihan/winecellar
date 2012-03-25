@@ -1,0 +1,23 @@
+// Place all the styles related to the bottles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$one: #CD5252;
+$two: #A9Ea44;
+$three: #A9E3e3;
+$four: #6F8649;
+$five: #006060;
+
+table,tr,th,td{
+
+	border: 1px solid $five;
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 5px;
+	color: #000;
+	
+	th {
+		background-color: #CD5252;
+	}
+}

@@ -1,0 +1,37 @@
+<%= form_for(@bottle) do |f| %>
+  <% if @bottle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bottle.errors.count, "error") %> prohibited this bottle from being saved:</h2>
+
+      <ul>
+      <% @bottle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+	<tr>
+		<th><%= f.label :vintage %></th>
+		<th><%= f.label :label %></th>
+		<th><%= f.label :varietal, :class => 'varietal' %></th>
+		<th><%= f.label :vineyard, :class => 'vineyard' %></th>
+		<th><%= f.label :quantity %></th>
+		<th><%= f.label :bottle_size_ml %></th>
+		<th>&nbsp;</th>
+	</tr>
+	
+	<tr>
+		<td><%= f.select "vintage", options_for_select( 1980 .. 2012 , "2000") %></td>
+		<td><%= f.text_field :label %></td>
+		<td><%= f.text_field :varietal %></td>
+		<td><%= f.text_field :vineyard %></td>
+		<td><%= f.select "quantity", options_for_select( 1 .. 12 , "1") %></td>
+		<td><%= f.text_field :bottle_size_ml, :value => 750, :size => 5 %></td>
+		<td><%= f.submit 'Add Bottle' %></td>
+	</tr>
+	
+</table>
+
+<% end %>

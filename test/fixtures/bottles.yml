@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vintage: 1
+  label: MyString
+  varietal: MyString
+  quantity: 1
+  bottle_size_ml: 1
+
+two:
+  vintage: 1
+  label: MyString
+  varietal: MyString
+  quantity: 1
+  bottle_size_ml: 1
