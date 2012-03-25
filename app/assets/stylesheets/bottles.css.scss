@@ -9,15 +9,23 @@ $three: #A9E3e3;
 $four: #6F8649;
 $five: #006060;
 
-table,tr,th,td{
+table{
+	border-collapse: collapse;
+}
 
+.new_bottle table {
+	border-collapse: collapse;
+
+	tr,td,th {
 	border: 1px solid $five;
 	border-collapse: collapse;
 	padding: 5px;
-	margin: 5px;
+	margin: 0px;
 	color: #000;
+	}
 	
 	th {
-		background-color: #CD5252;
+		background-color: $five;
+		color: #FFF;
 	}
 }

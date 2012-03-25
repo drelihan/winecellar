@@ -19,6 +19,10 @@ $(document).ready(function(){
 //jQuery.ajaxSetup({
 //'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 //})
+
+	$('#activeTable').dataTable( { bPaginate: false, "bScrollInfinite": true,
+    "bScrollCollapse": true,
+    "sScrollY": "500px" });
 		
 
 });

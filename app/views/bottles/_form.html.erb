@@ -1,4 +1,4 @@
-<%= form_for(@bottle) do |f| %>
+<%= form_for(@bottle, :class => 'add-new-row' ) do |f| %>
   <% if @bottle.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bottle.errors.count, "error") %> prohibited this bottle from being saved:</h2>

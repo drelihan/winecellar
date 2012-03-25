@@ -1,4 +1,6 @@
 class BottlesController < ApplicationController
+  before_filter :authorize, :except => [ 'index' ]  
+
   # GET /bottles
   # GET /bottles.json
   def index

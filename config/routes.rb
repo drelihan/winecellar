@@ -1,5 +1,6 @@
 Wine::Application.routes.draw do
   resources :bottles
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -14,6 +15,10 @@ Wine::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  match 'authenticate' , :controller => 'sessions', :action => 'create'
+  match 'login' , :controller => 'sessions', :action => 'new'
+  match 'logout', :controller => 'sessions', :action => 'destroy'
+
 
   # Sample resource route with options:
   #   resources :products do

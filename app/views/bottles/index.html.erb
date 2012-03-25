@@ -1,18 +1,31 @@
-<h1>Add a New Bottle</h1>
-<%= render 'form' %>
+<p id='notice'><%= notice %></p>
+
+<% if admin? %>
+<%= link_to 'Logout', logout_path %>
+
+	<h1>Add a New Bottle</h1>
+	<%= render 'form' %>
 
 <p style='margin-top: 30px'></p>
 <hr>
 <p style='margin-top: 30px'></p>
 
-<h1>Current Bottles</h1>
+<% else %>
 
-Count: <%= @number_of_bottles %>
+Dan or Kate? <%= link_to 'Login Here',login_path %>
+
+<% end %>
+
+<h1>Collection Bottles</h1>
+
+<h3>You have <%= @number_of_bottles %> bottles ( <%= @bottles.size %> unique bottles )</h3>
+
 <p>
 <% if @bottles.size == 0 %>
 <em>No bottles in collection :( </em>
 <% else %>
-<table>
+<table id='activeTable'>
+<thead>
   <tr>
     <th>Vintage</th>
     <th>Label</th>
@@ -20,11 +33,14 @@ Count: <%= @number_of_bottles %>
     <th>Vineyard</th>
     <th>Quantity</th>
     <th>Bottle size ml</th>
+<% if admin? %>
     <th></th>
     <th></th>
     <th></th>
+<% end %>
   </tr>
-
+</thead>
+<tbody>
 <% @bottles.each do |bottle| %>
   <tr>
     <td><%= bottle.vintage %></td>
@@ -33,11 +49,18 @@ Count: <%= @number_of_bottles %>
     <td><%= bottle.vineyard %></td>
     <td><%= bottle.quantity %></td>
     <td><%= bottle.bottle_size_ml %></td>
+
+	<% if admin? %>
+
     <td><%= link_to 'Show', bottle %></td>
     <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
     <td><%= link_to 'Destroy', bottle, confirm: 'Are you sure?', method: :delete %></td>
+	
+	<% end %>
+
   </tr>
 <% end %>
+</tbody>
 </table>
 <% end %>
 
