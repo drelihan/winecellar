@@ -1,0 +1,9 @@
+<p id='notice'><%= notice %></p>
+
+<h3>If you are Kate or Dan, enter your password:</h3>
+<%= form_tag sessions_path  %>
+Password	<%= password_field_tag :password %>
+	<%= submit_tag 'Login' %>
+	
+<p>
+<em>Otherwise, please check out our wine: <%= link_to 'Dan & Kate Wine Collection',bottles_path %></em>
