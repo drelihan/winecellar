@@ -1,12 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-str = "3|2004|Tom Eddy|Cabernet Sauvignon|10|750|2012-03-25 16:46:35.465974|2012-03-25 16:46:35.465974||Dr Crane
+3|2004|Tom Eddy|Cabernet Sauvignon|10|750|2012-03-25 16:46:35.465974|2012-03-25 16:46:35.465974||Dr Crane
 4|2005|Molino Real|Muscato|8|500|2012-03-25 16:48:09.341763|2012-03-25 16:48:09.341763||
 5|2006|Ehlers|Cabernet Sauvignon|4|750|2012-03-25 16:49:02.956756|2012-03-25 16:49:02.956756||1886
 6|2009|Ehlers|Cabernet Sauvignon|1|750|2012-03-25 16:49:36.054609|2012-03-25 16:49:36.054609||1886
@@ -96,9 +88,4 @@ str = "3|2004|Tom Eddy|Cabernet Sauvignon|10|750|2012-03-25 16:46:35.465974|2012
 90|2009|Quivira|Blend - Syrah|2|750|2012-03-25 17:36:26.388213|2012-03-25 17:36:26.388213||Hommage
 91|2008|Quivira|Blend - Syrah|2|750|2012-03-25 17:36:54.657993|2012-03-25 17:36:54.657993||Elusive
 92|2003|Casa De La Ermita|Blend - Monastrell|2|750|2012-03-25 17:37:33.089287|2012-03-25 17:37:33.089287||
-93|2009|Donelan|Blend - Grenache|1|750|2012-03-25 17:38:07.851866|2012-03-25 17:38:07.851866||Cuvee Moriah"
-
-str.split("\n").each do |line|
-    id,vintage,label,varietal,quantity,bottle_size_ml,created_at,updated_at,price_paid,vineyard = line.chomp.split("|")
-    Bottle.create!(:vintage=>vintage,:label => label, :varietal => varietal, :bottle_size_ml => bottle_size_ml, :vineyard => vineyard)
-end
+93|2009|Donelan|Blend - Grenache|1|750|2012-03-25 17:38:07.851866|2012-03-25 17:38:07.851866||Cuvee Moriah
