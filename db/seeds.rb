@@ -98,7 +98,8 @@ str = "3|2004|Tom Eddy|Cabernet Sauvignon|10|750|2012-03-25 16:46:35.465974|2012
 92|2003|Casa De La Ermita|Blend - Monastrell|2|750|2012-03-25 17:37:33.089287|2012-03-25 17:37:33.089287||
 93|2009|Donelan|Blend - Grenache|1|750|2012-03-25 17:38:07.851866|2012-03-25 17:38:07.851866||Cuvee Moriah"
 
+Bottle.delete_all
 str.split("\n").each do |line|
     id,vintage,label,varietal,quantity,bottle_size_ml,created_at,updated_at,price_paid,vineyard = line.chomp.split("|")
-    Bottle.create!(:vintage=>vintage,:label => label, :varietal => varietal, :bottle_size_ml => bottle_size_ml, :vineyard => vineyard)
+    Bottle.create!(:vintage=>vintage,:label => label, :varietal => varietal, :bottle_size_ml => bottle_size_ml, :vineyard => vineyard, :quantity => quantity )
 end
