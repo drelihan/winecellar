@@ -24,7 +24,7 @@ Dan or Kate? <%= link_to 'Login Here',login_path %>
 <% if @bottles.size == 0 %>
 <em>No bottles in collection :( </em>
 <% else %>
-<table id='activeTable'>
+<table class='wine-collection'>
 <thead>
   <tr>
     <th>Vintage</th>
@@ -34,8 +34,6 @@ Dan or Kate? <%= link_to 'Login Here',login_path %>
     <th>Quantity</th>
     <th>Bottle size ml</th>
 <% if admin? %>
-    <th></th>
-    <th></th>
     <th></th>
 <% end %>
   </tr>
@@ -52,9 +50,10 @@ Dan or Kate? <%= link_to 'Login Here',login_path %>
 
 	<% if admin? %>
 
-    <td><%= link_to 'Show', bottle %></td>
-    <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
-    <td><%= link_to 'Destroy', bottle, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Drink!', new_bottle_rating_path(bottle) %> |
+    <%= link_to 'Show', bottle %> |
+    <%= link_to 'Edit', edit_bottle_path(bottle) %> |
+    <%= link_to 'Destroy', bottle, confirm: 'Are you sure?', method: :delete %></td>
 	
 	<% end %>
 

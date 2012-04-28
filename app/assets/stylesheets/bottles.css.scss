@@ -1,8 +1,6 @@
 // Place all the styles related to the bottles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 $one: #CD5252;
 $two: #A9Ea44;
 $three: #A9E3e3;
@@ -11,7 +9,24 @@ $five: #006060;
 
 table{
 	border-collapse: collapse;
+	width: 100%;
+	
 }
+
+
+.wine-collection table,tr,td {
+	border: 1px solid $five;
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 0px;
+	color: #000;
+	
+	th {
+		background-color: $five;
+		color: #FFF;
+	}
+}
+
 
 .new_bottle table {
 	border-collapse: collapse;
@@ -29,3 +44,4 @@ table{
 		color: #FFF;
 	}
 }
+

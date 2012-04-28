@@ -1,5 +1,10 @@
 Wine::Application.routes.draw do
-  resources :bottles
+
+  match 'ratings' => 'ratings#index'
+  resources :bottles do 
+    resources :ratings, :shallow => true
+  end  
+  
   resources :sessions
 
   # The priority is based upon order of creation:

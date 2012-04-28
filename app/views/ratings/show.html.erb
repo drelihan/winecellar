@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bottle:</b>
+  <%= @rating.bottle_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @rating.quantity %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @rating.score %>
+</p>
+
+<p>
+  <b>Who:</b>
+  <%= @rating.who %>
+</p>
+
+<p>
+  <b>Drank with:</b>
+  <%= @rating.drank_with %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @rating.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', ratings_path %>

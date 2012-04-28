@@ -27,7 +27,7 @@
 		<td><%= f.text_field :label %></td>
 		<td><%= f.text_field :varietal %></td>
 		<td><%= f.text_field :vineyard %></td>
-		<td><%= f.select "quantity", options_for_select( 1 .. 12 , "1") %></td>
+		<td><%= f.select "quantity", options_for_select( 1 .. 24, @bottle.quantity ) %></td>
 		<td><%= f.text_field :bottle_size_ml, :value => 750, :size => 5 %></td>
 		<td><%= f.submit 'Add Bottle' %></td>
 	</tr>

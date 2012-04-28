@@ -1,0 +1,44 @@
+<%= form_for([@bottle,@rating]) do |f| %>
+  <% if @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+      <ul>
+      <% @rating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.hidden_field :bottle_id, :value => @bottle.id %>
+
+    <div class="field">
+    	<%= f.label :quantity %><br />
+		<%= f.select "quantity", options_for_select( 1 .. @bottle.quantity, "1" ) %>
+  	</div>
+
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.select :score, options_for_select( { '1 - Hated' => 1, '2 - Don\'t Buy Again' => 2, '3 - OK' => 3, '4 - Tasty: Definitely Buy Again' => 4, '5 - Amazing' => 5  }, @rating.score ), { :include_blank => 'Please Give a Rating' } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :who %><br />
+    <%= f.radio_button :who, "Dan" %> Dan<br>
+    <%= f.radio_button :who, "Kate", :checked => true %> Kate
+  </div>
+
+  <div class="field">
+    <%= f.label :drank_with, 'What did you drink this with ( e.g. steak, cheese, pasta, etc ) ?' %><br/>
+    <%= f.text_field :drank_with %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes, 'General Tasting Notes' %><br />
+    <%= f.text_area :notes, :rows => 10, :cols => 75  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

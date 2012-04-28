@@ -1,0 +1,32 @@
+<p id='notice'><%= notice %></p>
+
+<h1>Listing ratings</h1>
+
+<table>
+  <tr>
+    <th>Bottle</th>
+    <th>Quantity</th>
+    <th>Score</th>
+    <th>Who</th>
+    <th>Drank with</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ratings.each do |rating| %>
+<% bottle = Bottle.find_by_id(rating.bottle_id) %>
+  <tr>
+    <td><%= Bottle.get_title(rating.bottle_id) %></td>
+    <td><%= rating.quantity %></td>
+    <td><%= rating.score %></td>
+    <td><%= rating.who %></td>
+    <td><%= rating.drank_with %></td>
+    <td><%= rating.notes %></td>
+    <td><%= link_to 'Show', rating_path(rating) %></td>
+    <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

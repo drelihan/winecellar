@@ -19,3 +19,20 @@ header{
 	color: #FFF;
 	text-align: center;
 }
+
+.wine-collection table {
+	border-collapse: collapse;
+
+	tr,td,th {
+	border: 1px solid $five;
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 0px;
+	color: #000;
+	}
+	
+	th {
+		background-color: $five;
+		color: #FFF;
+	}
+}

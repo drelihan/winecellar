@@ -4,7 +4,7 @@ class BottlesController < ApplicationController
   # GET /bottles
   # GET /bottles.json
   def index
-    @bottles = Bottle.all
+    @bottles = Bottle.where('quantity > 0')
     
     @bottle = Bottle.new
     
