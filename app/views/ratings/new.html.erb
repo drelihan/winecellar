@@ -1,4 +1,4 @@
-<h1>Rate: <small><%= @bottle.vintage %> <%= @bottle.vineyard.capitalize %> <%= @bottle.label %> ( <%= @bottle.varietal.capitalize %> )</small></h1>
+<h1>Rate: <small><%= @bottle.vintage %> <%= @bottle.vineyard ? @bottle.vineyard.capitalize : '' %> <%= @bottle.label %> ( <%= @bottle.varietal %> )</small></h1>
 
 <%= render 'form' %>
 
