@@ -7,7 +7,8 @@ class Bottle < ActiveRecord::Base
     end
     
     bottle = Bottle.find(id)
-    "#{bottle.vintage} #{bottle.vineyard.capitalize} #{bottle.label} ( #{bottle.varietal} )"
+    vineyard = bottle.vineyard ? bottle.vineyard.capitalize : bottle.vineyard
+    "#{bottle.vintage} #{vineyard} #{bottle.label} ( #{bottle.varietal} )"
   end
   
 end
